@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مانهوا چسبان | نسخه MozJPEG - درصد فشرده‌سازی</title>
+<title>مانهوا چسبان | چسباندن عمودی صفحات مانهوا</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
   --ink:#181a24;--ink-deep:#0b0d14;--bg:#141824;
   --paper:#f5f1e4;--paper-soft:rgba(255,255,255,.42);
   --coral:#ff5964;--coral-d:#d63a47;--amber:#ffb545;--teal:#2fd4c6;
-  --muted:#a9b0c7;--muted-ink:#5c6070;--purple:#b14eff;--purple-d:#8b2fd4;
+  --muted:#a9b0c7;--muted-ink:#5c6070;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -46,17 +46,14 @@ button{font-family:inherit}
 .logo svg{width:34px;height:34px}
 h1{font-family:'Lalezar',cursive;font-weight:400;font-size:clamp(30px,5vw,46px);line-height:1}
 h1 .hl{color:var(--coral);text-shadow:0 3px 0 rgba(0,0,0,.45)}
-h1 .pro{background:var(--purple);color:#fff;padding:2px 10px;border-radius:8px;font-size:.6em;
-  margin-inline-start:8px;vertical-align:middle;box-shadow:0 3px 0 rgba(0,0,0,.3)}
 .tag{color:var(--muted);font-size:13px;margin-top:5px}
-.stickers{display:flex;gap:10px;flex-wrap:wrap}
+.stickers{display:flex;gap:10px}
 .sticker{font-family:'Lalezar',cursive;font-size:15px;padding:6px 16px;color:var(--ink);
   border:2.5px solid var(--ink-deep);border-radius:999px;box-shadow:-3px 3px 0 rgba(0,0,0,.45);
   transition:transform .25s}
 .sticker:hover{transform:scale(1.08)}
 .s1{background:var(--teal);transform:rotate(-3deg)}
 .s2{background:var(--amber);transform:rotate(2deg)}
-.s3{background:var(--purple);color:#fff;transform:rotate(-2deg)}
 .ticker{position:relative;z-index:1;background:var(--amber);border-block:3px solid var(--ink-deep);
   overflow:hidden;margin-top:20px;box-shadow:0 4px 0 rgba(0,0,0,.35)}
 .ticker-track{display:flex;width:max-content;animation:tick 26s linear infinite}
@@ -86,7 +83,7 @@ main{position:relative;z-index:1;max-width:1100px;margin:26px auto 70px;padding:
 .tape{position:absolute;top:-13px;inset-inline-start:26px;width:92px;height:25px;
   border:2px solid rgba(0,0,0,.28);transform:rotate(-4deg);border-radius:3px;opacity:.9}
 .tape.t1{background:rgba(255,181,69,.9)}.tape.t2{background:rgba(47,212,198,.85);transform:rotate(3deg)}
-.tape.t3{background:rgba(255,89,100,.85);transform:rotate(-2deg)}.tape.t4{background:rgba(177,78,255,.9);transform:rotate(2deg)}
+.tape.t3{background:rgba(255,89,100,.85);transform:rotate(-2deg)}
 .p-head{display:flex;align-items:center;gap:13px;margin-bottom:18px}
 .p-num{font-family:'Lalezar',cursive;width:44px;height:44px;flex:0 0 auto;display:grid;place-items:center;
   background:var(--ink);color:var(--paper);border-radius:12px;font-size:23px;transform:rotate(-5deg);
@@ -149,7 +146,6 @@ main{position:relative;z-index:1;max-width:1100px;margin:26px auto 70px;padding:
 .set-card{flex:1;min-width:235px;border:2.5px solid var(--ink);border-radius:12px;padding:16px;
   background:var(--paper-soft);transition:box-shadow .2s}
 .set-card:hover{box-shadow:-4px 4px 0 rgba(0,0,0,.18)}
-.set-card.pro-card{border-color:var(--purple);background:linear-gradient(135deg,rgba(177,78,255,.08),rgba(255,89,100,.05))}
 .set-card>label,.set-card>.lbl{font-size:13px;font-weight:800;display:block;margin-bottom:12px}
 .stepper{display:flex;align-items:center;gap:10px}
 .stepper button{width:47px;height:47px;font-family:'Lalezar',cursive;font-size:25px;line-height:1;
@@ -170,29 +166,6 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
 .fmt:hover span{transform:translateY(-2px)}
 .fmt:has(input:checked) span{background:var(--ink);color:var(--amber);box-shadow:-3px 3px 0 rgba(0,0,0,.3);
   transform:translateY(-2px)}
-.fmt.pro:has(input:checked) span{background:var(--purple);color:#fff;box-shadow:-3px 3px 0 rgba(0,0,0,.3)}
-.moz-status{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;font-size:12px;font-weight:700;margin-top:12px;background:rgba(255,255,255,.5)}
-.moz-status.loading{background:rgba(255,181,69,.2);color:#8b6600}
-.moz-status.ready{background:rgba(47,212,198,.18);color:#0d7a72}
-.moz-status.failed{background:rgba(255,89,100,.15);color:var(--coral-d)}
-.moz-status.disabled{background:rgba(92,96,112,.1);color:var(--muted-ink)}
-.moz-status .dot{width:10px;height:10px;border-radius:50%;flex:0 0 auto}
-.moz-status.loading .dot{background:var(--amber);animation:pulse 1s infinite}
-.moz-status.ready .dot{background:var(--teal)}
-.moz-status.failed .dot{background:var(--coral)}
-.moz-status.disabled .dot{background:var(--muted-ink)}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.target-input{display:flex;align-items:center;gap:8px;margin-top:12px}
-.target-input input{flex:1;height:40px;padding:0 12px;border:2.5px solid var(--ink);border-radius:10px;background:#fff;
-  font-family:'Lalezar',cursive;font-size:18px;text-align:center;color:var(--ink)}
-.target-input span{font-size:12px;font-weight:700;color:var(--muted-ink)}
-.toggle-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.toggle{position:relative;width:52px;height:28px;background:#d0d4e0;border:2.5px solid var(--ink);border-radius:999px;
-  cursor:pointer;transition:background .25s;flex:0 0 auto}
-.toggle.on{background:var(--purple)}
-.toggle-knob{position:absolute;top:2px;left:2px;width:18px;height:18px;background:#fff;border:2px solid var(--ink);
-  border-radius:50%;transition:transform .25s}
-.toggle.on .toggle-knob{transform:translateX(24px)}
 .calc-line{margin-top:16px;font-size:14px;font-weight:600;background:rgba(47,212,198,.16);
   border:2px dashed rgba(24,26,36,.4);padding:11px 15px;border-radius:10px;line-height:2}
 .lnum{font-family:'Lalezar',cursive;font-size:1.3em;color:var(--coral-d);font-weight:400}
@@ -217,7 +190,6 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
 .res-head-extra{font-size:12px;color:var(--muted-ink);font-weight:600;background:#fff;
   border:2px solid var(--ink);border-radius:999px;padding:4px 13px}
 .res-head-extra.gold{background:var(--amber);color:var(--ink)}
-.res-head-extra.pro{background:var(--purple);color:#fff;border-color:var(--purple-d)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(162px,1fr));gap:15px}
 .card{position:relative;background:#fff;border:2.5px solid var(--ink);border-radius:12px;overflow:hidden;
   cursor:pointer;box-shadow:-4px 4px 0 rgba(0,0,0,.28);transition:transform .2s,box-shadow .2s;
@@ -228,14 +200,9 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
 .c-num{position:absolute;top:9px;inset-inline-start:9px;font-family:'Lalezar',cursive;font-size:15px;
   background:var(--amber);color:var(--ink);border:2px solid var(--ink);border-radius:8px;padding:1px 9px;
   box-shadow:-2px 2px 0 rgba(0,0,0,.25)}
-.c-engine{position:absolute;top:9px;inset-inline-end:9px;font-size:9px;font-weight:800;letter-spacing:.3px;
-  padding:3px 8px;border-radius:6px;background:var(--ink);color:var(--amber);border:1.5px solid var(--ink-deep);
-  text-transform:uppercase;font-family:'Vazirmatn',sans-serif}
-.c-engine.moz{background:var(--purple);color:#fff;border-color:var(--purple-d)}
 .c-eye{position:absolute;top:0;left:0;right:0;height:172px;display:grid;place-items:center;
   background:rgba(24,26,36,.45);opacity:0;transition:opacity .2s}
 .card:hover .c-eye{opacity:1}
-.card:hover .c-engine{opacity:0}
 .c-eye svg{width:36px;height:36px;color:#fff;filter:drop-shadow(0 2px 0 rgba(0,0,0,.5));animation:pop .3s}
 .c-dl{position:absolute;top:9px;inset-inline-end:9px;width:32px;height:32px;display:grid;place-items:center;
   background:var(--ink);color:var(--paper);border:2px solid var(--ink-deep);border-radius:9px;cursor:pointer;
@@ -274,8 +241,6 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .lb-file{font-size:10.5px;font-weight:700;background:#fff;border:2px solid var(--ink);border-radius:7px;
   padding:2px 9px;letter-spacing:.4px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:0 0 auto}
-.lb-engine{font-size:9.5px;font-weight:800;background:var(--purple);color:#fff;border-radius:6px;
-  padding:3px 9px;letter-spacing:.4px;text-transform:uppercase;flex:0 0 auto}
 .lb-count{font-size:12px;font-weight:800;background:var(--ink);color:var(--amber);border-radius:8px;
   padding:3px 11px;flex:0 0 auto}
 .lb-x{margin-inline-start:auto;width:36px;height:36px;display:grid;place-items:center;background:var(--ink);
@@ -305,10 +270,8 @@ input[type=number]{-moz-appearance:textfield;appearance:textfield}
 .toast.show{transform:none;opacity:1}
 .toast.err{background:var(--coral-d)}
 .toast.ok{border-color:var(--teal)}
-.toast.warn{background:#c47a00;border-color:var(--amber)}
 footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-size:12.5px;padding:0 20px 40px}
 footer b{color:var(--coral)}
-footer b.purple{color:var(--purple)}
 @keyframes rise{from{opacity:0;transform:translateY(22px)}}
 @keyframes pop{from{opacity:0;transform:scale(.85)}}
 @media(max-width:640px){
@@ -318,14 +281,7 @@ footer b.purple{color:var(--purple)}
   .lb-nav{width:44px;height:44px}
   .stickers{display:none}
   .lb-file{display:none}
-  .s3{display:none}
 }
-
-input[type=range]{-webkit-appearance:none;width:100%;background:transparent;margin:8px 0}
-input[type=range]:focus{outline:none}
-input[type=range]::-webkit-slider-runnable-track{width:100%;height:12px;background:#141824;border:2.5px solid var(--ink-deep);border-radius:999px;box-shadow:inset 0 2px 4px rgba(0,0,0,.4)}
-input[type=range]::-webkit-slider-thumb{height:24px;width:24px;border-radius:50%;background:var(--coral);border:2.5px solid var(--ink-deep);cursor:pointer;-webkit-appearance:none;margin-top:-8px;box-shadow:-3px 3px 0 rgba(0,0,0,.5);transition:transform .15s}
-input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
 </style>
 </head>
 <body>
@@ -336,20 +292,19 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
       <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="5" height="18" rx="1.2"/><rect x="9.5" y="6" width="5" height="15" rx="1.2" opacity=".72"/><rect x="16" y="3" width="5" height="12" rx="1.2" opacity=".5"/></svg>
     </div>
     <div>
-      <h1>مانهوا<span class="hl">چسبان</span><span class="pro">PRO</span></h1>
-      <p class="tag">با موتور فشرده‌سازی حرفه‌ای MozJPEG</p>
+      <h1>مانهوا<span class="hl">چسبان</span></h1>
+      <p class="tag">چسباندن عمودی صفحات مانهوا — کیفیت کامل، کاملاً آفلاین</p>
     </div>
   </div>
   <div class="stickers">
     <span class="sticker s1">۱۰۰٪ آفلاین</span>
     <span class="sticker s2">بدون آپلود</span>
-    <span class="sticker s3">MozJPEG ⚡</span>
   </div>
 </header>
 
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track" id="tickerTrack">
-    <span>چسباندن عمودی صفحات <i>✦</i></span><span>فشرده‌سازی MozJPEG <i>✦</i></span><span>پشتیبانی از ZIP و CBZ <i>✦</i></span><span>گروه‌بندی دقیق <i>✦</i></span><span>مرتب‌سازی هوشمند <i>✦</i></span><span>تغییر فرمت JPG / PNG / WEBP <i>✦</i></span><span>هیچ فایلی آپلود نمی‌شود <i>✦</i></span>
+    <span>چسباندن عمودی صفحات <i>✦</i></span><span>کیفیت ۹۵٪ بدون کوچک‌سازی <i>✦</i></span><span>پشتیبانی از ZIP و CBZ <i>✦</i></span><span>گروه‌بندی دقیق <i>✦</i></span><span>مرتب‌سازی هوشمند <i>✦</i></span><span>تغییر فرمت JPG / PNG / WEBP <i>✦</i></span><span>هیچ فایلی آپلود نمی‌شود <i>✦</i></span>
   </div>
 </div>
 
@@ -389,7 +344,7 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
     <span class="tape t2"></span>
     <div class="p-head">
       <span class="p-num">۲</span>
-      <div><h2>تنظیمات چسباندن</h2><p>تعداد هر گروه، فرمت و موتور فشرده‌سازی را مشخص کن</p></div>
+      <div><h2>تنظیمات چسباندن</h2><p>تعداد هر گروه و فرمت خروجی را مشخص کن</p></div>
     </div>
     <div class="settings">
       <div class="set-card">
@@ -399,38 +354,13 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
           <input type="number" id="groupNum" value="4" min="1" max="999">
           <button type="button" id="gPlus" title="بیشتر">+</button>
         </div>
-        <p class="hint">مثلاً ۱۰ عکس با عدد ۳ ⟵ سه گروه ۳تایی (۱-۳، ۴-۶، ۷-۹) + یک گروه ۱تایی (۱۰).</p>
+        <p class="hint">مثلاً ۱۰ عکس با عدد ۳ ⟵ سه گروه ۳تایی (۱-۳، ۴-۶، ۷-۹) + یک گروه ۱تایی (۱۰). باقی‌مونده همیشه همه‌اش با هم می‌ره.</p>
       </div>
       <div class="set-card" id="orderCard">
         <span class="lbl">ترتیب چسباندن</span>
         <div class="fmt-row">
           <label class="fmt"><input type="radio" name="ord" value="name" checked><span>🔢 شمارهٔ فایل</span></label>
           <label class="fmt"><input type="radio" name="ord" value="pick"><span>👆 ترتیب انتخاب من</span></label>
-        </div>
-      </div>
-      <div class="set-card pro-card">
-        <div class="toggle-row">
-          <span class="lbl" style="margin:0">⚡ موتور MozJPEG</span>
-          <div class="toggle on" id="mozToggle"><div class="toggle-knob"></div></div>
-        </div>
-        <p class="hint" style="margin-top:8px">فشرده‌سازی حرفه‌ای — تا ۳۰٪ کاهش حجم بیشتر.</p>
-        <div class="moz-status loading" id="mozStatus"><span class="dot"></span><span id="mozStatusText">در حال آماده‌سازی موتور...</span></div>
-      </div>
-      <div class="set-card">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
-          <label for="compressionRange" class="lbl" style="margin:0;">درصد فشرده‌سازی</label>
-          <span id="compressionVal" style="font-family:'Lalezar',cursive;font-size:20px;color:var(--coral);">۲۰٪</span>
-        </div>
-        <input type="range" id="compressionRange" min="5" max="95" value="20" step="5">
-        <p class="hint">
-          <b>۲۰٪ فشرده‌سازی</b> = کیفیت عالی (۸۰٪ حفظ می‌شه)<br>
-          <b>۵۰٪ فشرده‌سازی</b> = تعادل بین حجم و کیفیت<br>
-          <b>۹۰٪ فشرده‌سازی</b> = حجم خیلی کم (کیفیت ۱۰٪)
-        </p>
-        <div class="target-input">
-          <span>یا هدف حجم:</span>
-          <input type="number" id="targetSize" min="50" max="10000" placeholder="خودکار">
-          <span>KB</span>
         </div>
       </div>
       <div class="set-card">
@@ -440,7 +370,7 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
           <label class="fmt"><input type="radio" name="fmt" value="png"><span>PNG</span></label>
           <label class="fmt"><input type="radio" name="fmt" value="webp"><span>WEBP</span></label>
         </div>
-        <p class="hint">MozJPEG فقط برای JPG فعاله.</p>
+        <p class="hint">کیفیت ۹۵٪ — ابعاد دست نمی‌خوره</p>
       </div>
     </div>
     <div class="calc-line" id="calcLine"></div>
@@ -461,7 +391,6 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
       <div><h2>خروجی‌ها</h2><p>روی هر کادر بزن تا تصویر چسبیده را بزرگ ببینی</p></div>
       <span class="res-extras">
         <span class="res-head-extra gold">کیفیت کامل</span>
-        <span class="res-head-extra pro" id="engineUsed">—</span>
         <span class="res-head-extra" id="resCount"></span>
       </span>
     </div>
@@ -469,7 +398,7 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
   </section>
 </main>
 
-<footer>مانهوا چسبان <b>♥</b> با قدرت <b class="purple">MozJPEG</b></footer>
+<footer>مانهوا چسبان <b>♥</b> همه‌ی پردازش‌ها داخل مرورگر خودت انجام می‌شه</footer>
 
 <div class="lb" id="lb">
   <button class="lb-nav lb-prev" id="lbPrev" title="قبلی"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m9.5 6 6 6-6 6"/></svg></button>
@@ -477,7 +406,6 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
     <div class="lb-bar">
       <b id="lbTitle"></b>
       <span class="lb-file" id="lbFile" dir="ltr"></span>
-      <span class="lb-engine" id="lbEngine"></span>
       <span class="lb-count" id="lbCount"></span>
       <button class="lb-x" id="lbClose" title="بستن"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
     </div>
@@ -491,66 +419,8 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
 
 <div class="toast" id="toast"></div>
 
-<script type="module">
+<script>
 "use strict";
-
-/* ═══════════════════════════════════════════════════════════
-   🔧 MozJPEG Engine
-   ═══════════════════════════════════════════════════════════ */
-const MozJPEG = {
-  module: null,
-  loaded: false,
-  loading: false,
-  failed: false,
-  loadPromise: null,
-  MAX_CANVAS_SIZE: 4096,
-  
-  async load(onStatus) {
-    if (this.loaded) return true;
-    if (this.failed) return false;
-    if (this.loading && this.loadPromise) return await this.loadPromise;
-    
-    this.loading = true;
-    if (onStatus) onStatus('loading', 'در حال دانلود MozJPEG...');
-    
-    this.loadPromise = (async () => {
-      try {
-        const module = await import('https://unpkg.com/@jsquash/jpeg@2.1.3/codec/enc/mozjpeg_enc.js');
-        if (onStatus) onStatus('loading', 'در حال راه‌اندازی...');
-        await module.init();
-        this.module = module;
-        this.loaded = true;
-        this.failed = false;
-        console.log('✅ MozJPEG loaded successfully');
-        if (onStatus) onStatus('ready', 'موتور MozJPEG آماده است ⚡');
-        return true;
-      } catch (err) {
-        console.warn('⚠️ MozJPEG load failed:', err);
-        this.failed = true;
-        this.loaded = false;
-        if (onStatus) onStatus('failed', 'MozJPEG لود نشد — Canvas API');
-        return false;
-      }
-    })();
-    
-    return await this.loadPromise;
-  },
-  
-  async encode(imageData, quality) {
-    if (!this.loaded || !this.module) return null;
-    try {
-      const buffer = await this.module.encode(imageData, { quality });
-      return new Blob([buffer], { type: 'image/jpeg' });
-    } catch (err) {
-      console.warn('MozJPEG encode failed:', err);
-      return null;
-    }
-  }
-};
-
-/* ═══════════════════════════════════════════════════════════
-   🎛️ Helper Functions
-   ═══════════════════════════════════════════════════════════ */
 const $=s=>document.querySelector(s);
 const fa=n=>String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
 const pad3=n=>String(n).padStart(3,'0');
@@ -558,11 +428,13 @@ const fmtBytes=b=>b<1048576?fa((b/1024).toFixed(1))+' کیلوبایت':fa((b/10
 const fmtSize=b=>b<1048576?fa(Math.max(1,Math.round(b/1024)))+' KB':fa((b/1048576).toFixed(1))+' MB';
 const IMG_RE=/\.(jpe?g|png|webp|gif|bmp|avif)$/i;
 const ARCH_RE=/\.(zip|cbz)$/i;
+const MIME={jpg:'image/jpeg',png:'image/png',webp:'image/webp'};
 const natSort=(a,b)=>a.localeCompare(b,'en',{numeric:true,sensitivity:'base'});
 const tick=()=>new Promise(r=>setTimeout(r,0));
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const INITIAL_FILM=20,MAX_THUMBS=250;
 
+/* ═══ تشخیص حد واقعی کنواس این دستگاه ═══ */
 const MAX_DIM=(function(){
   for(const d of[32767,16384,8192,4096]){
     try{
@@ -578,11 +450,9 @@ const MAX_DIM=(function(){
 
 const S={
   mode:'normal',busy:false,group:4,fmt:'jpg',orderMode:'name',filmExpanded:false,
-  useMoz:true,targetSize:0,
   normal:{raw:[],files:[],urls:[],thumbs:[]},
   zip:{file:null,zipObj:null,entries:[]},
-  results:[],resZipName:'manhwa-stitched.zip',resMode:'normal',
-  engineUsed:null,fallbackCount:0
+  results:[],resZipName:'manhwa-stitched.zip',resMode:'normal'
 };
 const LB={mode:'result',idx:0,url:null,own:false};
 let toastT=null,thumbToken=0;
@@ -602,121 +472,9 @@ function showProgress(){$('#progress').classList.remove('hidden');}
 function hideProgress(){$('#progress').classList.add('hidden');$('#pFill').style.width='0%';}
 function setProgress(p,label){$('#pFill').style.width=Math.min(100,p)+'%';$('#pPct').textContent=fa(Math.round(Math.min(100,p)))+'٪';if(label)$('#pLabel').textContent=label;}
 function currentTotal(){return S.mode==='normal'?S.normal.files.length:(S.zip.entries||[]).length;}
+function canvasBlob(c,type,q){return new Promise(res=>{try{c.toBlob(b=>res(b||null),type,q);}catch(e){res(null);}});}
 
-/* ═══════════════════════════════════════════════════════════
-   🖼️ Smart Encoder (با منطق معکوس فشرده‌سازی)
-   ═══════════════════════════════════════════════════════════ */
-function canvasEncode(canvas,quality,type='image/jpeg'){
-  return new Promise(res=>{
-    try{canvas.toBlob(b=>res(b||null),type,quality);}
-    catch(e){res(null);}
-  });
-}
-
-function isCanvasTooLarge(canvas){
-  return canvas.width > MozJPEG.MAX_CANVAS_SIZE || canvas.height > MozJPEG.MAX_CANVAS_SIZE;
-}
-
-function getImageData(canvas){
-  const ctx=canvas.getContext('2d');
-  if(!ctx)return null;
-  try{
-    return ctx.getImageData(0,0,canvas.width,canvas.height);
-  }catch(e){
-    console.warn('⚠️ getImageData failed:', e.message);
-    return null;
-  }
-}
-
-/**
- * فشرده‌سازی هوشمند
- * @param {HTMLCanvasElement} canvas
- * @param {number} quality - کیفیت واقعی (0 تا 1)
- * @param {string} format
- * @returns {{blob: Blob|null, engine: string}}
- */
-async function smartEncode(canvas,quality,format){
-  if(format==='png'){
-    const blob=await canvasEncode(canvas,undefined,'image/png');
-    return {blob,engine:'canvas'};
-  }
-  if(format==='webp'){
-    const blob=await canvasEncode(canvas,quality,'image/webp');
-    return {blob,engine:'canvas'};
-  }
-  
-  if(S.useMoz && MozJPEG.loaded && MozJPEG.module){
-    if(isCanvasTooLarge(canvas)){
-      console.log(`⚠️ Canvas too large (${canvas.width}x${canvas.height}) — using Canvas API`);
-    }else{
-      const imageData=getImageData(canvas);
-      if(imageData){
-        const mozBlob=await MozJPEG.encode(imageData,quality);
-        if(mozBlob){
-          return {blob:mozBlob,engine:'mozjpeg'};
-        }
-        console.warn('⚠️ MozJPEG encode failed, falling back');
-        S.fallbackCount++;
-      }else{
-        console.warn('⚠️ getImageData returned null, falling back');
-        S.fallbackCount++;
-      }
-    }
-  }
-  
-  const blob=await canvasEncode(canvas,quality,'image/jpeg');
-  return {blob,engine:'canvas'};
-}
-
-/**
- * جستجوی باینری برای رسیدن به حجم هدف
- * @param {HTMLCanvasElement} canvas
- * @param {number} targetBytes
- * @param {string} format
- * @param {number} maxIterations
- * @returns {{blob, engine, compression}|null}
- */
-async function encodeWithTargetSize(canvas,targetBytes,format,maxIterations=7){
-  // compression از 5% تا 95%
-  let low=5,high=95;
-  let bestResult=null;
-  let bestDiff=Infinity;
-  const tolerance=0.15;
-  
-  for(let i=0;i<maxIterations && low<=high;i++){
-    const mid=Math.floor((low+high)/2); // compression percentage
-    const quality=(100-mid)/100; // کیفیت واقعی = معکوس فشرده‌سازی
-    
-    await tick();
-    
-    const result=await smartEncode(canvas,quality,format);
-    
-    if(!result || !result.blob)break;
-    
-    const diff=Math.abs(result.blob.size-targetBytes);
-    if(diff<bestDiff){
-      bestDiff=diff;
-      bestResult={...result,compression:mid};
-    }
-    
-    if(diff/targetBytes<tolerance)break;
-    
-    // منطق معکوس برای compression:
-    if(result.blob.size>targetBytes){
-      // حجم بیشتر از هدف → باید بیشتر فشرده کنیم → compression بیشتر
-      low=mid+1;
-    }else{
-      // حجم کمتر از هدف → می‌تونیم کمتر فشرده کنیم → compression کمتر
-      high=mid-1;
-    }
-  }
-  
-  return bestResult;
-}
-
-/* ═══════════════════════════════════════════════════════════
-   UI Logic
-   ═══════════════════════════════════════════════════════════ */
+/* ═══ سوییچ حالت ═══ */
 document.querySelectorAll('.mode').forEach(btn=>{
   btn.addEventListener('click',()=>{
     if(S.busy||btn.dataset.mode===S.mode)return;
@@ -727,7 +485,6 @@ document.querySelectorAll('.mode').forEach(btn=>{
     syncModeUI();
   });
 });
-
 function syncModeUI(){
   const z=S.mode==='zip';
   $('#step1Title').textContent=z?'انتخاب فایل زیپ':'انتخاب عکس‌ها';
@@ -742,6 +499,7 @@ function syncModeUI(){
   renderPicked();
 }
 
+/* ═══ انتخاب فایل ═══ */
 const drop=$('#drop'),fileInput=$('#fileInput');
 drop.addEventListener('click',()=>{if(!S.busy)fileInput.click();});
 drop.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&!S.busy){e.preventDefault();fileInput.click();}});
@@ -785,6 +543,7 @@ async function setZipFile(f){
   finally{$('#dropTitle').textContent=old;}
 }
 
+/* ═══ رندر انتخاب ═══ */
 function renderPicked(){
   const total=currentTotal(),picked=$('#picked');
   $('#goBtn').disabled=!total;
@@ -834,6 +593,7 @@ $('#filmstrip').addEventListener('click',e=>{
   if(card)openLB('source',+card.dataset.i);
 });
 
+/* ═══ تامبنیل ═══ */
 async function loadThumbBitmap(file){
   if(window.createImageBitmap){try{return await createImageBitmap(file,{resizeWidth:160,resizeQuality:'high'});}catch(e){}try{return await createImageBitmap(file);}catch(e){}}
   return new Promise((res,rej)=>{const u=URL.createObjectURL(file),i=new Image();i.onload=()=>{res(i);URL.revokeObjectURL(u);};i.onerror=rej;i.src=u;});
@@ -859,7 +619,7 @@ async function generateThumbs(){
         const srcH=Math.max(1,Math.min(bmp.height,Math.round(TH*bmp.width/TW)));
         x.drawImage(bmp,0,0,bmp.width,srcH,0,0,TW,TH);
         if(typeof bmp.close==='function')bmp.close();bmp=null;
-        const b=await canvasEncode(c,.72,'image/jpeg');c.width=0;c.height=0;
+        const b=await canvasBlob(c,'image/jpeg',.72);c.width=0;c.height=0;
         if(token!==thumbToken)return;
         if(b){const u=URL.createObjectURL(b);S.normal.thumbs[i]=u;
           const cell=strip.querySelector(`.film-card[data-i="${i}"] .film-img`);
@@ -871,7 +631,7 @@ async function generateThumbs(){
   await Promise.all([worker(),worker(),worker(),worker()]);
 }
 
-/* ═══ Settings ═══ */
+/* ═══ تنظیمات ═══ */
 function setGroup(v){S.group=Math.max(1,Math.min(999,parseInt(v)||1));$('#groupNum').value=S.group;updateCalc();}
 $('#gMinus').addEventListener('click',()=>setGroup(S.group-1));
 $('#gPlus').addEventListener('click',()=>setGroup(S.group+1));
@@ -880,41 +640,6 @@ document.querySelectorAll('input[name=fmt]').forEach(r=>r.addEventListener('chan
 document.querySelectorAll('input[name=ord]').forEach(r=>r.addEventListener('change',()=>{
   if(!r.checked)return;S.orderMode=r.value;applyOrder();renderPicked();generateThumbs();
 }));
-
-// 🔄 Slider درصد فشرده‌سازی (معکوس کیفیت)
-const cRange=$('#compressionRange');
-const cVal=$('#compressionVal');
-if(cRange&&cVal){
-  cRange.addEventListener('input',()=>{
-    cVal.textContent=fa(cRange.value)+'٪';
-  });
-}
-
-$('#targetSize').addEventListener('input',e=>{
-  S.targetSize=parseInt(e.target.value)||0;
-});
-
-$('#mozToggle').addEventListener('click',async ()=>{
-  S.useMoz=!S.useMoz;
-  $('#mozToggle').classList.toggle('on',S.useMoz);
-  if(S.useMoz && !MozJPEG.loaded && !MozJPEG.failed){
-    await MozJPEG.load((status,text)=>{
-      $('#mozStatus').className='moz-status '+status;
-      $('#mozStatusText').textContent=text;
-    });
-  }else{
-    if(!S.useMoz){
-      $('#mozStatus').className='moz-status disabled';
-      $('#mozStatusText').textContent='MozJPEG غیرفعال است';
-    }else if(MozJPEG.loaded){
-      $('#mozStatus').className='moz-status ready';
-      $('#mozStatusText').textContent='موتور MozJPEG آماده است ⚡';
-    }else if(MozJPEG.failed){
-      $('#mozStatus').className='moz-status failed';
-      $('#mozStatusText').textContent='MozJPEG لود نشد — Canvas API';
-    }
-  }
-});
 
 function updateCalc(){
   const total=currentTotal(),n=S.group,el=$('#calcLine');
@@ -931,7 +656,14 @@ function updateCalc(){
 
 /* ═══════════════════════════════════════════════════════════
    موتور چسباندن
+   ═══════════════════════════════════════════════════════════
+   منطق گروه‌بندی: هر N تا با هم، آخری باقی‌مونده — دست نمی‌خوره
+   
+   فیکس سایز: اول با سایز کامل تلاش می‌شه. اگه کنواس دستگاه
+   جا نداشت (با پیکسل تستی تشخیص داده می‌شه)، فقط به اندازهٔ
+   لازم کوچک می‌شه و دوباره تلاش می‌شه.
    ═══════════════════════════════════════════════════════════ */
+
 async function loadImg(blob){
   if(window.createImageBitmap){try{return await createImageBitmap(blob);}catch(e){}}
   return new Promise((res,rej)=>{const u=URL.createObjectURL(blob),i=new Image();i.onload=()=>{res(i);URL.revokeObjectURL(u);};i.onerror=rej;i.src=u;});
@@ -943,6 +675,19 @@ function targetWidth(ws){
   return best;
 }
 
+async function encodeHQ(c,fmt){
+  const isPng=(fmt==='png');
+  const type=isPng?'image/png':(MIME[fmt]||'image/jpeg');
+  const ladder=isPng?[undefined]:[0.95,0.92,0.90,0.88,0.85];
+  for(const q of ladder){
+    const b=await canvasBlob(c,type,q);
+    if(b)return{blob:b,q:isPng?null:q};
+    await tick();
+  }
+  const fb=await canvasBlob(c,'image/png',undefined);
+  return fb?{blob:fb,q:null}:{blob:null,q:null};
+}
+
 async function makeThumb(c,W,H){
   const TW=170,TH=230;
   const t=document.createElement('canvas');t.width=TW;t.height=TH;
@@ -952,7 +697,7 @@ async function makeThumb(c,W,H){
   tx.fillStyle='#fff';tx.fillRect(0,0,TW,TH);
   const srcH=Math.max(1,Math.min(H,Math.round(TH*W/TW)));
   tx.drawImage(c,0,0,W,srcH,0,0,TW,TH);
-  const b=await canvasEncode(t,.75,'image/jpeg');
+  const b=await canvasBlob(t,'image/jpeg',.75);
   t.width=0;t.height=0;
   return b?URL.createObjectURL(b):null;
 }
@@ -965,6 +710,7 @@ async function stitchGroup(blobs,fmt){
   const heights0=bmps.map(b=>Math.max(1,Math.round(b.height*(W0/b.width))));
   const H0=heights0.reduce((a,h)=>a+h,0);
 
+  /* شروع از سایز کامل — فقط اگه از حد دستگاه رد بشه کوچک می‌شه */
   let scale=Math.min(1,MAX_DIM/H0,MAX_DIM/W0);
   let result=null;
 
@@ -980,6 +726,10 @@ async function stitchGroup(blobs,fmt){
       const x=c.getContext('2d');
       if(!x)throw new Error('no ctx');
 
+      /* ═══ پیکسل تستی: آیا کنواس واقعاً کار می‌کنه؟ ═══
+         اگه دستگاه جا نداشته باشه، کنواس «شکسته» ساخته می‌شه
+         و drawImage ساکت انجام نمی‌شه → خروجی سفید ۲۰KB
+         این چک جلوشو می‌گیره */
       x.fillStyle='#3a7bd5';x.fillRect(0,0,1,1);
       let px=null;
       try{px=x.getImageData(0,0,1,1).data;}catch(e){throw new Error('broken');}
@@ -995,38 +745,17 @@ async function stitchGroup(blobs,fmt){
         y+=heights[i];
       }
 
-      // 🔄 منطق معکوس: slider درصد فشرده‌سازی را نشان می‌دهد
-      const cRange=$('#compressionRange');
-      const compressionPct=cRange?parseInt(cRange.value,10):20; // درصد فشرده‌سازی
-      const userQ=(100-compressionPct)/100; // کیفیت واقعی = معکوس
-      const targetKB=S.targetSize;
-      
-      let enc=null;
-      if(targetKB>0){
-        enc=await encodeWithTargetSize(c,targetKB*1024,fmt);
-      }else{
-        const smartResult=await smartEncode(c,userQ,fmt);
-        if(smartResult){
-          enc={...smartResult,compression:compressionPct};
-        }
-      }
-      
-      if(!enc || !enc.blob || enc.blob.size<5000)throw new Error('encode fail');
+      const enc=await encodeHQ(c,fmt);
+      /* اگه خروجی کمتر از ۵KB باشه یعنی کنواس خالی بوده */
+      if(!enc||!enc.blob||enc.blob.size<5000)throw new Error('encode fail');
 
       const thumbUrl=await makeThumb(c,W,H);
       c.width=0;c.height=0;
       if(!thumbUrl)throw new Error('thumb fail');
 
-      result={
-        blob:enc.blob,
-        compression:enc.compression, // ذخیره درصد فشرده‌سازی (نه کیفیت)
-        engine:enc.engine,
-        thumbUrl,
-        scaled:scale<0.995
-      };
+      result={blob:enc.blob,q:enc.q,thumbUrl,scaled:scale<0.995};
       break;
     }catch(e){
-      console.error(`⚠️ Group encode failed (attempt ${attempt+1}):`, e.message);
       if(c){c.width=0;c.height=0;}
       scale*=0.7;
       await tick();
@@ -1049,14 +778,12 @@ async function process(){
   const total=currentTotal();
   if(!total){toast('اول فایل انتخاب کن','err');return;}
   S.busy=true;
-  S.fallbackCount=0;
   const btn=$('#goBtn');btn.disabled=true;
   const oldLabel=$('#goLabel').textContent;
   $('#goLabel').textContent='در حال پردازش…';
   clearResults();showProgress();
 
   const n=S.group,fmt=S.fmt;
-  const engines={mozjpeg:0,canvas:0};
 
   const groups=[];
   for(let i=0;i<total;i+=n){
@@ -1091,41 +818,25 @@ async function process(){
           r.size=r.blob.size;
           r.name=pad3(allResults.length+1)+'.'+fmt;
           if(r.scaled)scaledCount++;
-          engines[r.engine]=(engines[r.engine]||0)+1;
           allResults.push(r);
         }else{
           failed++;
         }
       }catch(err){
-        console.error(`❌ Group ${gi+1} failed:`, err);
+        console.error(err);
         failed++;
       }
     }
 
-    if(!allResults.length){
-      toast('هیچ خروجی ساخته نشد — تعداد هر گروه رو کمتر کن','err');
-      hideProgress();
-      return;
-    }
+    if(!allResults.length){toast('خروجی ساخته نشد — تعداد هر گروه رو کمتر کن','err');hideProgress();return;}
 
     setProgress(100,'تمام شد! ✨');
     S.results=allResults;
-    S.engineUsed=engines.mozjpeg>engines.canvas?'mozjpeg':'canvas';
-    
     renderResults();
     let msg=fa(allResults.length)+' تصویر ساخته شد ✨';
-    if(engines.mozjpeg>0)msg+=` • ${fa(engines.mozjpeg)} با MozJPEG`;
-    if(engines.canvas>0)msg+=` • ${fa(engines.canvas)} با Canvas`;
-    if(scaledCount)msg+=` • ${fa(scaledCount)} مورد کوچک‌تر شد`;
-    if(failed>0)msg+=` • ${fa(failed)} خطا`;
-    
-    if(S.fallbackCount>0 && S.useMoz){
-      msg+=` • ${fa(S.fallbackCount)} مورد به Canvas برگشت`;
-      toast(msg,'warn');
-    }else{
-      toast(msg,failed>0?'err':'ok');
-    }
-    
+    if(scaledCount)msg+=` • ${fa(scaledCount)} مورد کمی کوچک‌تر شد (محدودیت کنواس دستگاه)`;
+    if(failed)msg+=` • ${fa(failed)} خطا`;
+    toast(msg,failed?'err':'ok');
     setTimeout(hideProgress,900);
     setTimeout(()=>$('#resultsPanel').scrollIntoView({behavior:'smooth',block:'start'}),150);
   }catch(err){
@@ -1135,6 +846,7 @@ async function process(){
   }
 }
 
+/* ═══ رندر خروجی ═══ */
 function rangeLabel(r){
   if(r.end>r.start)return`عکس ${fa(r.start+1)} تا ${fa(r.end+1)}`;
   return r.single?`عکس ${fa(r.start+1)} (تکی)`:`عکس ${fa(r.start+1)}`;
@@ -1144,15 +856,6 @@ function renderResults(){
   $('#resultsPanel').classList.remove('hidden');
   const totalSize=S.results.reduce((a,r)=>a+r.blob.size,0);
   $('#resCount').textContent=fa(S.results.length)+' تصویر • '+fmtBytes(totalSize);
-  
-  const engineEl=$('#engineUsed');
-  if(S.engineUsed==='mozjpeg'){
-    engineEl.textContent='⚡ MozJPEG';
-    engineEl.classList.add('pro');
-  }else{
-    engineEl.textContent='🖼️ Canvas API';
-    engineEl.classList.remove('pro');
-  }
 
   const all=document.createElement('div');
   all.className='card zip-all'+(S.resMode==='zip'?' attn':'');
@@ -1166,11 +869,8 @@ function renderResults(){
   S.results.forEach((r,i)=>{
     const d=document.createElement('div');
     d.className='card';d.style.animationDelay=Math.min(i*45,650)+'ms';
-    const engineLabel=r.engine==='mozjpeg'?'MozJPEG':'Canvas';
-    const engineClass=r.engine==='mozjpeg'?'moz':'';
     d.innerHTML=`<img src="${r.thumbUrl}" alt="${esc(rangeLabel(r))}" loading="lazy" decoding="async">
       <span class="c-num">${fa(i+1)}</span>
-      <span class="c-engine ${engineClass}">${engineLabel}</span>
       <button class="c-dl" title="دانلود">${ICON.dl}</button>
       <span class="c-eye">${ICON.eye}</span>
       <div class="c-label">
@@ -1183,7 +883,7 @@ function renderResults(){
   });
 }
 
-/* ═══ ZIP builder ═══ */
+/* ═══ زیپ ═══ */
 const CRC_TABLE=(()=>{const t=new Uint32Array(256);for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=(c&1)?(0xEDB88320^(c>>>1)):(c>>>1);t[n]=c;}return t;})();
 async function crc32Async(u8){let c=0xFFFFFFFF;const CH=2<<20;for(let off=0;off<u8.length;off+=CH){const end=Math.min(off+CH,u8.length);for(let i=off;i<end;i++)c=CRC_TABLE[(c^u8[i])&0xFF]^(c>>>8);await tick();}return(c^0xFFFFFFFF)>>>0;}
 function dosDateTime(d=new Date()){return{time:(d.getHours()<<11)|(d.getMinutes()<<5)|(d.getSeconds()>>1),date:(((d.getFullYear()-1980)&0x7F)<<9)|((d.getMonth()+1)<<5)|d.getDate()};}
@@ -1234,7 +934,7 @@ async function downloadAll(){
   finally{S.busy=false;}
 }
 
-/* ═══ Lightbox ═══ */
+/* ═══ لایت‌باکس ═══ */
 function lbLen(){return LB.mode==='result'?S.results.length:S.normal.files.length;}
 function openLB(mode,idx){LB.mode=mode;LB.idx=idx;renderLB();$('#lb').classList.add('show');document.body.style.overflow='hidden';}
 function renderLB(){
@@ -1246,15 +946,11 @@ function renderLB(){
     LB.url=URL.createObjectURL(r.blob);LB.own=true;
     $('#lbImg').src=LB.url;$('#lbTitle').textContent=rangeLabel(r);$('#lbTitle').dir='rtl';
     $('#lbFile').textContent=r.name+' • '+fmtSize(r.size);
-    // نمایش درصد فشرده‌سازی به جای کیفیت
-    const compressionText=r.compression?`فشرده: ${fa(r.compression)}٪`:'—';
-    $('#lbEngine').textContent=(r.engine==='mozjpeg'?'MozJPEG':'Canvas')+' • '+compressionText;
     $('#lbDlLabel').textContent='دانلود این تصویر';$('#lbDl').onclick=()=>download(r.blob,r.name);
   }else{
     const f=S.normal.files[LB.idx];LB.url=S.normal.urls[LB.idx];
     $('#lbImg').src=LB.url;$('#lbTitle').textContent=f.name;$('#lbTitle').dir='ltr';
     $('#lbFile').textContent=fmtBytes(f.size);
-    $('#lbEngine').textContent='Original';
     $('#lbDlLabel').textContent='دانلود فایل اصلی';$('#lbDl').onclick=()=>download(f,f.name);
   }
   $('#lbCount').textContent=fa(LB.idx+1)+' / '+fa(len);$('#lbWrap').scrollTop=0;
@@ -1275,14 +971,6 @@ document.addEventListener('keydown',e=>{
 
 $('#tickerTrack').innerHTML+=$('#tickerTrack').innerHTML;
 syncModeUI();
-
-(async function initMoz(){
-  await MozJPEG.load((status,text)=>{
-    $('#mozStatus').className='moz-status '+status;
-    $('#mozStatusText').textContent=text;
-  });
-})();
-
 </script>
 </body>
 </html>
